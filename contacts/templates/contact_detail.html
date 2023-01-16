@@ -1,0 +1,13 @@
+<h1>{{ contact.name }}</h1>
+
+{% if contact.numbers.all %}
+<ul>
+{% for number in contact.numbers.all %}
+    <li>{{ number.number }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>there is no numpers for this contact.. </p>
+{% endif %}
+
+<a href="{% url 'contact-list' %}">Back to list</a>
